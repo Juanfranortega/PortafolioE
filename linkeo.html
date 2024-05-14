@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkeo JS</title>
+
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ZlX4zgwAAfBZ_sVwfZBZSJM6tFwOxHEUaM65KdNoUU8R_JJ3Z7s6g47A9xQcVBGNNkv4ceL9EtIvya_SUBpW1ac8kbdoWwIitc6i977nZKQKrArM0QEW9ehMovZ7YlC4PR_lj1xf_yPZQt31Q1OMKInJ2RuYlKRIt_IWu9ocq4V1SR0PB9SfeKUM3dGelC90sNMK3BEj0R8wm_-OaphAlw" charset="UTF-8"></script><style>
+table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      
+    }
+
+    th,
+    td {
+      text-align: center;
+      width: 8vw;
+      height: 5vh;
+    }
+    
+</style>
+
+<script type="text/javascript">
+    function validar(){
+    var user=document.forms[0].usuario.value;
+    var pass=document.forms[0].contra.value;
+    if(user== pass){
+        document.write("Acceso concedido ");
+        document.write("<a href=https://portafolioweb1jfoj.000webhostapp.com/>ir a portafolio</<a>");
+    }else{
+        document.write("Acceso denegado ");
+        document.write("<a href=file:///C:/Users/184918/Desktop/linkeo.html>Nuevamente</<a>");
+    }
+return true;
+}
+</script>
+</head>
+
+<body>
+    <form id="myform" onsubmit="return validar();">
+    <p>Usuario <input id="usuario" name="usuario" type="text"/></p>
+    <p>Contraseña <input id="contra" name="contra" type="password"/></p>
+    <p><input type="submit"/></p>
+    <p>Se puede usar cualquier usuario y contraseña para ingresar, solamente debe ser igual para acceder acceso, si es diferente lo denegará.</p>
+    </form>
+</body>
+</html>

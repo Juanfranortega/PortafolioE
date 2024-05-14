@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-J1I0gRIuV3mdtCAgRF_aZXFDFGOOrRCX-0K09Z-7ZQqd2BEzFDPkaxv8leqaBKO7EVjButeADE19smTy6IXkITfXM0dKPC3C7Z8NkPj6jI-r7IC52CkV9Bt1XvgYpX-gVXUfu2fHwCMVXbbsOdHnOlETrBa4TWdfJDS9OGS4OELNbPwiexebAAIjcs1XSnbTIkIVknQec9DVGNWscaMng" charset="UTF-8"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<body>
+
+
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+
+
+<script>
+
+const xValues = ["Progra I", "PrograWeb", "Fisica I", "Matematicas I", "NucleoII", "Ingles VI"];
+
+const yValues = [Math.floor(Math.random()*10), Math.floor(Math.random()*10),Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*10)];
+
+const barColors = ["red", "green","blue","orange","brown"];
+
+
+
+new Chart("myChart", {
+
+ type: "bar",
+
+ data: {
+
+  labels: xValues,
+
+  datasets: [{
+
+   backgroundColor: barColors,
+
+   data: yValues
+
+  }]
+
+ },
+
+ options: {
+
+  legend: {display: false},
+
+  title: {
+
+   display: true,
+
+   text: "Calificaciones"
+
+  }
+
+ }
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>

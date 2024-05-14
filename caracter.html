@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <title>Crear tabla caracter</title>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_xoARstJ6v4WA-f9bGh8pTKikcBu5ptrOApE0SyuyGGTiyIlFtcwX8Q6JUyWu9WijVBTJbu0ZXkpvqbXQaEU-Ouo23uxfzj3F2n9X4BkUqpd3XJlvHZg-yX-kngNMQHMEIEXdh97gi571Fx-6ooS5NuBEE3UnfsEHzf9Wo5iezV6U8_WrAfcn9oTwIDS8U3wVZGwj8HFP43RZ_es-Ryn4g" charset="UTF-8"></script><style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      
+    }
+
+    th,
+    td {
+      text-align: center;
+      width: 8vw;
+      height: 5vh;
+    }
+    img{
+      width: 10vw;
+      height: 8vh;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function crearTabla() {
+      var filas = parseInt(document.forms["myform"]["filas"].value);
+      var columnas = parseInt(document.forms["myform"]["columnas"].value);
+      var texto = parseInt(document.forms["myform"]["texto"].value);
+
+      var tabla = "<table>";
+      for (var i = 0; i < filas; i++) {
+        tabla += "<tr>";
+        for (var j = 0; j < columnas; j++) {
+          /*tabla += "<td> <img src=imagen.jpg> </td>";*/
+          var texto = document.forms["myform"]["texto"].value; // Obtener el texto ingresado por el usuario
+          tabla += "<td>" + texto + "</td>";
+        }
+        tabla += "</tr>";
+      }
+      tabla += "</table>";
+
+      document.getElementById("tabla-container").innerHTML = tabla;
+
+      return false; // Para evitar el envío del formulario y la recarga de la página
+    }
+  </script>
+</head>
+
+<body>
+  <form id="myform" onsubmit="return crearTabla();">
+    <p>Ingrese el número de filas: <input id="filas" name="filas" type="number" /></p>
+    <p>Ingrese el número de columnas: <input id="columnas" name="columnas" type="number"/></p>
+    <p>Ingresa un texto a mostrar: <input id="texto" name="texto" type="text"/></p>
+    <p><input type="submit" value="Crear Tabla" /></p>
+  </form>
+
+  <div id="tabla-container"></div>
+</body>
+
+</html>

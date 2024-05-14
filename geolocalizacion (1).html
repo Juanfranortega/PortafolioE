@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=u2iQtiLdtOkhkXjIWGlUuWstNKGjjbE4Rmuuz6n-xme-9rgxHAg_7-yChn68Z6hbnzvfufXrQMxsIYSMYltZcns3Mey8TSZmzq5gUTWwAWW1DCkcHaY1a7Lk_WqlEtdQxXD1cIqMBBwyxMiM6hoUEDXI4XYRFijR9oNlmkFVTReu4YBTYbGKb1UPF3UZ_h5iWGnAgb9lx7pacEegPeBQ6g" charset="UTF-8"></script>
+<h1>HTML Geolocation</h1>
+<p>Click the button to get your coordinates.</p>
+<button onclick="getLocation()">Try It</button>
+<p id="demo"></p>
+<script>
+const x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+</body>
+</html>

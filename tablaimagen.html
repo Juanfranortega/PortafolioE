@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Crear tabla</title>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=jeWvAVP5CN_2M_mBQNyD6J-lyBgkoVv7Z4sib6ojZtX3OqBB4YRsUiPfyPozMrMsm7z7DQUTLaWBrQxzxICF4or7DMVTjKDvhPZW0hnPxOiMvI4ihe88-fqgMSQRAP7rGZwkxcA5LhZ8FHywvOBdi7xDHdlWGglmIPltuovUJMwCYlP6KyCCBgwY4Zcn4pQz9K49R6pg13CrCTn4qPTmqw" charset="UTF-8"></script><style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: center;
+      width: 30px;
+      height: 30px;
+    }
+
+    img{
+        width: 10vw;
+        height: 9vh;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function crearTabla() {
+      var filas = parseInt(document.forms["myform"]["filas"].value);
+      var columnas = parseInt(document.forms["myform"]["columnas"].value);
+      var imageUrl = "https://th.bing.com/th/id/OIP.xeYgGh-8WU3MK_f3czpnMwHaEK?rs=1&pid=ImgDetMain"; 
+
+      var tabla = "<table>";
+      for (var i = 0; i < filas; i++) {
+        tabla += "<tr>";
+        for (var j = 0; j < columnas; j++) {
+          tabla += "<td><img src='" + imageUrl + "' alt='Imagen'></td>"; 
+        }
+        tabla += "</tr>";
+      }
+      tabla += "</table>";
+
+      document.getElementById("tabla-container").innerHTML = tabla;
+
+      return false; // Evitar el envío del formulario y la recarga de la página
+    }
+  </script>
+</head>
+
+<body>
+  <form id="myform" onsubmit="return crearTabla();">
+    <p>Ingrese el número de filas: <input id="filas" name="filas" type="number" /></p>
+    <p>Ingrese el número de columnas: <input id="columnas" name="columnas" type="number" /></p>
+    <p><input type="submit" value="Crear Tabla" /></p>
+  </form>
+
+  <div id="tabla-container"></div>
+</body>
+
+</html>

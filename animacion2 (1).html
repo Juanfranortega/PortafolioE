@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-UZBIUDP5rOKhGD51kNrJ8t8SQupQ620A9I_gLRPR_dDzMugcz31hb-FXBQU_JJDRS6g9QxHcS1Spix7xNVOuEJy-AIHXJpb8zabXPBpt2DtIdthbL0dEUob0jM5F6s6vIHocm40gHS0lVQS4nviN2vi3bGUnzDajpbqRhhWa4nk8Kz5ZI3NXidStRGiFNacgOSiDi00J9wuZJodulpnTg" charset="UTF-8"></script><style> 
+.sol {
+  width: 10vw;
+  height: 10vh;
+  left:0px; top:100px;
+  position: relative;
+  animation-name: sol;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: alternate-reverse;  
+}
+
+.luna{
+  width: 8vw;
+  height: 6vh;
+  position: relative;
+  left:0px; top:500px;
+  animation-name: luna;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: alternate-reverse;
+}
+@keyframes sol {
+  30%   { left: 300px;}
+}
+
+@keyframes luna {
+  0%   { left:300px; top:500px; rotate: 360deg;}
+  20%  { right:0px; top:0px;}
+  
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+
+<p>The animation-direction property specifies whether an animation should be played forwards, backwards or in alternate cycles. The following example uses the value "alternate-reverse" to make the animation run backwards first, then forwards:</p>
+
+<div>
+    <img class="sol" src="https://th.bing.com/th/id/R.f4a1a0c018ec1ca4740e5aa298fb648a?rik=euPxnK0SqACuQg&riu=http%3a%2f%2fpngimg.com%2fuploads%2fsun%2fsun_PNG13431.png&ehk=Ixrp4GYwkiLgLzYWcnwmaL8CQxrZsjgJJlPX2HQNwrY%3d&risl=&pid=ImgRaw&r=0" style="width: 10vh; height: 8vh; background-repeat: no-repeat; background-size: cover;">
+    <img class="luna" src="https://www.transparentpng.com/thumb/moon/WHcwZA-moon-transparent-png.png" style="width: 10vh; height: 8vh; background-repeat: no-repeat; background-size: cover;">
+</div>
+
+</body>
+</html>
+
+

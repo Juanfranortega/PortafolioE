@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=HSyKAA_KFKM9oxTn_uWcBDzDuryPDkmmuI7UmqtOKuosdBCHfnLckkKiMl59Zj-8dCxkAk-dRc-Ccm_Td8yZKElFQyflHP7S3DAru3iSwkBARp84ivdyM8vCV-ev1e-KYfO7Z4wBuquU3ixUr4m0XEDq2XnsbGf0yGZAR0MAg-yozTbbOGzwNxPW3SgtMQRUSOa9h4d_Ucyoq6Li5z0PXw" charset="UTF-8"></script>
+<h1>HTML5 Canvas</h1>
+<h2>The stroke() Method</h2>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid grey"></canvas>
+
+<script>
+const c = document.getElementById("myCanvas");
+const ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(20, 20);
+ctx.lineTo(20, 100);
+ctx.lineTo(70, 100);
+ctx.strokeStyle = "red";
+ctx.stroke();
+</script> 
+
+</body>
+</html>

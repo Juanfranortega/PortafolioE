@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+
+  <style>
+    #myPlot {
+    margin: 0 auto; /* Esto centra la grafica horizontalmente */
+  }
+
+  </style>
+
+  <body style="text-align: center; color: aliceblue; background-color: black;">
+
+    <form id="myform" onsubmit="return pregunta();">
+
+      <p>Ingresa valor inicial <input id="inicio" name="inicio" type="number" /></p>
+      <p>Ingresa valor final <input id="final" name="final" type="number" /></p>
+      <p>Ingresa tipo de gráfica </p>
+      <select id="opcion" name="opcion">
+        <option value="seno">Seno</option>
+        <option value="coseno">Coseno</option>
+        <option value="tangente">Tangente</option>
+        <option value="cotangente">Cotangente</option>
+      </select>
+      <p><input type="submit" value="Crear Gráfica" /></p>
+    </form>
+
+    <div id="mensaje"></div>
+    <div id="myPlot" style="width:100%;max-width:700px"></div>
+
+    <script>
+      function pregunta() {
+        var inicio = parseInt(document.forms["myform"]["inicio"].value);
+        var final = parseInt(document.forms["myform"]["final"].value);
+        if (inicio === final || inicio > final) {
+          MensajeError("Error: El valor inicial debe ser diferente al valor final y el valor final debe ser mayor que el valor inicial.");
+          return false;
+        } else {
+          generarGrafica(inicio, final);
+          return false; // Para evitar que el formulario se envíe y la página se recargue
+        }
+      }
+
+      function MensajeError(mensaje) {
+        document.getElementById("mensaje").innerHTML = mensaje;
+      }
+
+      function generarGrafica(inicio, final) {
+        const opcion = document.getElementById("opcion").value;
+        let exp = "";
+
+        switch (opcion) {
+          case "seno":
+            exp = "Math.sin(x)";
+            break;
+          case "coseno":
+            exp = "Math.cos(x)";
+            break;
+          case "tangente":
+            exp = "Math.tan(x)";
+            break;
+          case "cotangente":
+            exp = "Math.tanh(x)";
+            break;
+          default:
+            document.write("Opcion no valida");
+        }
+
+        const xValues = [];
+        const yValues = [];
+
+        for (let x = inicio; x <= final; x += 0.1) {
+          xValues.push(x);
+          yValues.push(eval(exp.replace("x", x)));
+        }
+
+        const data = [{ x: xValues, y: yValues, mode: "lines" }];
+        const layout = { title: "y = " + exp };
+
+        Plotly.newPlot("myPlot", data, layout);
+      }
+    </script>
+  </body>
+</html>

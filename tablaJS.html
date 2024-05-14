@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabla JavaScript</title>
+  <script type="text/javascript">
+    // Función para crear la tabla al cargar la página
+    window.onload = function() {
+      crearTabla();
+    };
+
+    function crearTabla() {
+      var filas = 5; // Número de filas
+      var columnas = 5; // Número de columnas
+      var tabla = document.createElement('table'); // Crear elemento de tabla
+
+      // Iterar sobre las filas
+      for (var i = 0; i < filas; i++) {
+        var fila = document.createElement('tr'); // Crear elemento de fila
+
+        // Iterar sobre las columnas
+        for (var j = 0; j < columnas; j++) {
+          var celda = document.createElement('td'); // Crear elemento de celda
+          celda.textContent = 'Celda'; // Establecer el contenido de la celda
+          fila.appendChild(celda); // Agregar la celda a la fila
+        }
+
+        tabla.appendChild(fila); // Agregar la fila a la tabla
+      }
+
+      document.body.appendChild(tabla); // Agregar la tabla al cuerpo del documento
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>AhorcadoP2</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ESoSVf1b0FCGnnQDoUSveqQHPJUpOHzLyYoDTLbDqdEHC1q6zAftuJbG2-tXermfHVY3CPEZT2sQmEaucOtaRRRb7SL25N4AVJBR7dRt1l53Ef11eAjWHBdKeJhtLGREmBMJmvyP6cIvEVhN-t6GkB19vaECvxkusvzARU_ghfWagDkcZGl1s6_fcWRRufwgSOjPhfWcrNy6pEX03UgSkA" charset="UTF-8"></script><style>
+        body {
+            text-align: center;
+        }
+
+        #WIN{
+            color: red;
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ahorcado P2</h1>
+    <button onclick="limpiar()">Limpiar</button>
+
+    <canvas id="myCanvas" width="400" height="400" style="border: 2px solid black;"></canvas>
+    
+    <p id="WIN"></p>
+
+    <form onsubmit="return adivinar()">
+        <p>Ingresa una palabra o letra (en mayúscula): <input id="answer" type="text" /></p>
+        <input type="submit" value="Enviar"/>
+    </form>
+    
+
+    <script>
+        const c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+        var intentos = 0;
+        var palabraCorrecta = 'VITEFRON'; // Cambia la palabra por la que quieras
+
+        function adivinar() {
+            var respuesta = document.getElementById("answer").value;
+
+            if (respuesta === palabraCorrecta) {
+                document.getElementById("WIN").innerHTML = "¡GANASTE!";
+                return false;
+            }
+
+            if (intentos < 6) {
+                dibujar(intentos);
+                intentos++;
+            } else {
+                document.getElementById("WIN").innerHTML = "¡Has perdido!";
+                return false;
+            }
+
+            return false;
+        }
+
+        function dibujar(intentos) {
+            switch (intentos) {
+                case 0:
+                    dibujarCabeza();
+                    break;
+                case 1:
+                    dibujarCuerpo();
+                    break;
+                case 2:
+                    dibujarBrazoIzq();
+                    break;
+                case 3:
+                    dibujarBrazoDer();
+                    break;
+                case 4:
+                    dibujarPiernaIzq();
+                    break;
+                case 5:
+                    dibujarPiernaDer();
+                    break;
+            }
+        }
+
+        function dibujarCabeza() {
+            ctx.beginPath();
+            ctx.arc(210, 150, 40, 0, 2 * Math.PI); // Cabeza
+            ctx.stroke();
+        }
+
+        function dibujarCuerpo() {
+            ctx.moveTo(210, 190); // Cuerpo
+            ctx.lineTo(210, 250);
+            ctx.stroke();
+        }
+
+        function dibujarBrazoIzq() {
+            ctx.moveTo(210, 190); // Brazo izquierdo
+            ctx.lineTo(180, 200);
+            ctx.stroke();
+        }
+
+        function dibujarBrazoDer() {
+            ctx.moveTo(210, 190); // Brazo derecho
+            ctx.lineTo(240, 200);
+            ctx.stroke();
+        }
+
+        function dibujarPiernaIzq() {
+            ctx.moveTo(210, 250); // Pierna izquierda
+            ctx.lineTo(180, 275);
+            ctx.stroke();
+        }
+
+        function dibujarPiernaDer() {
+            ctx.moveTo(210, 250); // Pierna derecha
+            ctx.lineTo(245, 275);
+            ctx.stroke();
+        }
+
+        function limpiar() {
+            ctx.clearRect(0, 0, c.width, c.height); // Borra el canvas
+            document.getElementById("WIN").innerHTML = "";
+            
+            intentos = 0;
+        }
+    </script>
+</body>
+</html>

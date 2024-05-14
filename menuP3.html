@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio P3</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: rgb(255, 255, 195);
+        font-size: large;
+    }
+
+    @keyframes changeColorSize {
+        0% {
+            color: black;
+            font-size: 2em;
+        }
+        50% {
+            color: #e73629; /* Cambia el color */
+            font-size: 2.5em; /* Aumenta el tamaño */
+        }
+        100% {
+            color: black;
+            font-size: 2em;
+        }
+    }
+    
+    @keyframes changeColorSize1 {
+        0% {
+            color: black;
+            font-size: 1.5em;
+        }
+        50% {
+            color: #e7c429; /* Cambia el color */
+            font-size: 2em; /* Aumenta el tamaño */
+        }
+        100% {
+            color: black;
+            font-size: 1.5em;
+        }
+    }
+
+    h1 {
+        animation: changeColorSize 3s infinite; /* Aplica la animación */
+    }
+
+    h2{
+        animation: changeColorSize1 3s infinite; /* Aplica la animación */
+    }
+    .menu {
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    button {
+        background-color: #000000;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: all 0.3s ease; /* Añade una transición suave */
+    }
+
+    button:hover {
+        background-color: #dcdcc7;
+        transform: scale(1.1); /* Escala el botón al pasar el mouse */
+        color: #670edc;
+        font-weight: bold;
+    }
+
+    #content {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .encabezado{
+        background-color: #000000;
+        color: aliceblue;
+        margin-left: 10vw;
+        text-align: center;
+        margin-top: 3vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 80vw;
+        height:7vh;
+    }
+
+    .encabezado2{
+        background-color: #000000;
+        color: aliceblue;
+        margin-left: 2vw;
+        margin-bottom: 1vh;
+        text-align: center;
+        margin-top: 3vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 80vw;
+        height:7vh;
+    }
+
+    .pie{
+        background-color: #000000;
+        width: 90vw;
+        height:2vh;
+        margin-left: 5vw;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="encabezado">
+    <h1>Portafolio Parcial 3</h1>
+    </div>
+
+    <div class="menu">
+        <div class="encabezado2">
+            <h2>Semana 1</h2>
+        </div>
+        <button id="btn1">Actividad 3</button>
+        <button id="btn2">Actividad 4</button>
+        <button id="btn3">Actividad 5</button>
+        <button id="btn4">Actividad 6</button>
+        <button id="btn5">Actividad 7</button>
+        <button id="btn6">Actividad 8</button>
+            <div class="encabezado2">
+                <h2>Semana 2</h2>
+            </div>
+        <button id="btn7">Actividad 9</button>
+        <button id="btn13">Actividad 10</button>
+        <button id="btn14">Actividad 11</button>
+        <button id="btn15">Actividad 12</button>
+        <button id="btn8">Actividad 13</button>
+        <button id="btn9">Actividad 14</button>
+        <button id="btn10">Actividad 15</button>
+        <button id="btn11">Reto 1</button>
+        <button id="btn12">Reto2 </button>
+        <button id="btn16">Ahorcado </button>
+        <button id="btn17">Test de Violencia </button>
+            <div class="encabezado2">
+                <h2>Semana 3</h2>
+            </div>
+        <button id="btn18">Test de Violencia a PDF </button>
+        <button id="btn19">Mitad Piramide PDF  </button>
+        <button id="btn20">Piramide Completo PDF </button>
+    </div>
+    
+    <div id="content">
+       
+    </div>
+    
+    <script>
+
+    document.getElementById("btn1").onclick = function() {
+        window.location.href = "tablasinrelleno.html";  
+    };
+
+    document.getElementById("btn2").onclick = function() {
+        window.location.href = "caracter.html"; 
+    };
+
+    document.getElementById("btn3").onclick = function() {
+        window.location.href = "tablaimagen.html"; 
+    };
+
+    document.getElementById("btn4").onclick = function() {
+        window.location.href = "tablarandomJS.html"; 
+    };
+
+    document.getElementById("btn5").onclick = function() {
+        window.location.href = "linkeo.html";  
+    };
+
+    document.getElementById("btn6").onclick = function() {
+        window.location.href = "conversiongrados.html";  
+    };
+
+    document.getElementById("btn7").onclick = function() {
+        window.location.href = "Arreglos2.html";  
+    };
+
+    document.getElementById("btn8").onclick = function() {
+        window.location.href = "graficas.html";  
+    };
+    
+    document.getElementById("btn9").onclick = function() {
+        window.location.href = "ejercicio15.html";  
+    };
+    
+    document.getElementById("btn10").onclick = function() {
+        window.location.href = "actividad16.html";  
+    };
+    
+    document.getElementById("btn11").onclick = function() {
+        window.location.href = "reto1JS.html";  
+    };
+    
+    document.getElementById("btn12").onclick = function() {
+        window.location.href = "reto2JS.html";  
+    };
+    
+    document.getElementById("btn13").onclick = function() {
+        window.location.href = "geolocalizacion.html";  
+    };
+    
+    document.getElementById("btn14").onclick = function() {
+        window.location.href = "geolocalizacionMapa.html";  
+    };
+    
+    document.getElementById("btn15").onclick = function() {
+        window.location.href = "canva.html";  
+    };
+    
+    document.getElementById("btn16").onclick = function() {
+        window.location.href = "ahorcadop2.html";  
+    };
+    
+    document.getElementById("btn17").onclick = function() {
+        window.location.href = "test.html";  
+    };
+    
+    document.getElementById("btn18").onclick = function() {
+        window.location.href = "testiframe.html";  
+    };
+
+    document.getElementById("btn19").onclick = function() {
+        window.location.href = "piramidemitad.html";  
+    };
+
+    document.getElementById("btn20").onclick = function() {
+        window.location.href = "piramide.html";  
+    };
+    </script>
+
+    <div class="pie">
+
+    </div>
+</body>
+</html>

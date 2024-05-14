@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Crear tabla sin relleno</title>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=HK_uhksAFtI1Le_TqOzAklh-f7NG-VmUnI6SHd0sFW6S5DyRDVptB7NaubdywqRgOaQXUPdpNENvFWtlmIE63kmbPAnZCRWPgAwh3aI0leBaFxn37IiScoL8ckpmrYl5LFe3AF5j8Pk_JbNK0F5l6ubN9srDLgVpHeTXhNOvwFFTx-E0OrQ5uajvKCNAYpwUQu64JvF00v-HaRNxZc-NNA" charset="UTF-8"></script><style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: center;
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function crearTabla() {
+      var filas = parseInt(document.forms["myform"]["filas"].value);
+      var columnas = parseInt(document.forms["myform"]["columnas"].value);
+
+      var tabla = "<table>";
+      for (var i = 0; i < filas; i++) {
+        tabla += "<tr>";
+        for (var j = 0; j < columnas; j++) {
+          tabla += "<td></td>";
+        }
+        tabla += "</tr>";
+      }
+      tabla += "</table>";
+
+      document.getElementById("tabla-container").innerHTML = tabla;
+
+      return false; // Para evitar el envío del formulario y la recarga de la página
+    }
+  </script>
+</head>
+
+<body>
+  <form id="myform" onsubmit="return crearTabla();">
+    <p>Ingrese el número de filas: <input id="filas" name="filas" type="number" /></p>
+    <p>Ingrese el número de columnas: <input id="columnas" name="columnas" type="number" /></p>
+    <p><input type="submit" value="Crear Tabla" /></p>
+  </form>
+
+  <div id="tabla-container"></div>
+</body>
+
+</html>

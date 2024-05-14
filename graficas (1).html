@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=aWUEvnHl4vKJ8njtJ5y0RTbkkOnj2BB8X3UA6QQzoR62CTzYyH3aoncjjby3Ozj3zbXyWthimOKnHrDcZYj3Z7qPaaNLPt-n-Jo6NeP81qbl0SOmZ008ky-MobBlt0-dBpo4P2Oo78cCr50RBJc6Y8Mg14nw_yltrwXxRWgbc8allBwKcQ8iwxx8WhDIRh9Zmg7P2i-APD-riDrfI7WBhQ" charset="UTF-8"></script><script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<body>
+
+
+
+<div id="myPlot1" style="width:100%;max-width:700px"></div>
+
+<div id="myPlot2" style="width:100%;max-width:700px"></div>
+
+<div id="myPlot3" style="width:100%;max-width:700px"></div>
+
+<script>
+
+const xArray1 = ["Matematicas", "Fisica", "Nucleo II", "Ingles", "Programacion I", "Programacion web I"];
+
+const yArray1 = [8, 6, 9, 7.5, 8.5, 8];
+
+const xArray2 = ["Matematicas", "Fisica", "Nucleo II", "Ingles", "Programacion I", "Programacion web I"];
+
+const yArray2 = [7.5, 7.5, 10, 7.5, 8, 8.5];
+
+const xArray3 = ["Matematicas", "Fisica", "Nucleo II", "Ingles", "Programacion I", "Programacion web I"];
+
+const yArray3 = [Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*10)];
+
+
+const data1 = [{
+
+ x:xArray1,
+
+ y:yArray1,
+
+ type:"bar",
+
+ orientation:"v",
+
+ marker: {color:"rgba(0,0,0,0.8)"}
+
+ 
+}];
+
+const data2 = [{
+
+x:xArray2,
+
+y:yArray2,
+
+type:"bar",
+
+orientation:"v",
+
+marker: {color:"rgba(255,0,0,0.8)"}
+
+}];
+
+const data3 = [{
+
+x:xArray3,
+
+y:yArray3,
+
+type:"bar",
+
+orientation:"v",
+
+marker: {color:"rgba(0,0,255,0.8)"}
+
+}];
+
+
+
+const layout1 = {title:"Calificaciones Parcial 1"};
+
+const layout2 = {title:"Calificaciones Parcial 2"};
+
+const layout3 = {title:"Predicciones Parcial 3"};
+
+Plotly.newPlot("myPlot1", data1, layout1);
+
+Plotly.newPlot("myPlot2", data2, layout2);
+
+Plotly.newPlot("myPlot3", data3, layout3);
+
+</script>
+
+
+</body>
+
+</html>

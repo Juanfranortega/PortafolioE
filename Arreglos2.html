@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=mH8UFvjDGPlmggaZXcULPijDUXcGGHWE7q6bhavdNUQDBmJLgsoQd2HIDOI5I_valwBnLp0JMUe90hoeGrtRYGIMmfwupkju-HQfjYnjDEfdhFoGkuIcj3BiWZ7FOu3utRHeY8WYRKzCNt_JH66ES5erT1Et4VUaMKjqwrYY-MaQkdLVvIKhPqDGJGpsCUXFoWlyXFIJ9onGnCaqbZQv3A" charset="UTF-8"></script><style>
+    .caja {
+      margin-top: 2vh;
+      border: 8px solid blueviolet;
+      background-color: rgb(201, 166, 229);
+      width: 40vw;
+      text-align: center;
+      margin-left: 48vh;
+    }
+
+    table {
+      margin-left: 12.5vw;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body style="text-align: center; background-color: rgb(182, 182, 182);">
+
+  <div class="caja">
+    <h1>Arreglos</h1>
+
+    <h2>Ordenación</h2>
+
+    <p>Click en la opción</p>
+
+    <button onclick="generarArreglo()">Genera</button>
+
+    <button onclick="imprimeArreglo()">Imprime</button>
+
+    <button onclick="ordenarArreglo()">Ordena</button>
+
+    <button onclick="invertirArreglo()">Invierte</button>
+
+    <button onclick="tabulaArreglo()">Tabla</button>
+
+    <button onclick="agregaArreglo()">Agregar</button>
+
+    <button onclick="eliminaArreglo()">Eliminar</button>
+
+    <p id="demo"></p>
+
+  </div>
+
+  <script>
+    var arreglo = [0, 0, 0, 0, 0, 0];
+
+    function generarArreglo() {
+      document.getElementById("demo").innerHTML = "Arreglo generado";
+      for (var i = 0; i < arreglo.length; i++) {
+        arreglo[i] = Math.floor(Math.random() * 100) + 1;
+      }
+    }
+
+    function imprimeArreglo() {
+      document.getElementById("demo").innerHTML = "Arreglo Resultante " + arreglo;
+    }
+
+    function ordenarArreglo() {
+      arreglo = arreglo.sort(function (a, b) {
+        return a - b
+      });
+      document.getElementById("demo").innerHTML = "Arreglo Resultante " + arreglo;
+    }
+
+    function invertirArreglo() {
+      arreglo = arreglo.reverse();
+      document.getElementById("demo").innerHTML = "Arreglo Resultante " + arreglo;
+    }
+
+    function tabulaArreglo() {
+      var texto = "<table border=1><tr>";
+
+      for (var i = 0; i < arreglo.length; i++) {
+        texto = texto + "<td>" + arreglo[i] + "</td>";
+      }
+
+      texto = texto + "</tr></table>";
+      document.getElementById("demo").innerHTML = texto;
+    }
+
+    function agregaArreglo() {
+      var elemento = Math.floor(Math.random() * 100 + 1);
+      arreglo.push(elemento);
+      document.getElementById("demo").innerHTML = "Elemento agregado: " + elemento;
+    }
+
+    function eliminaArreglo() {
+      arreglo.pop();
+      document.getElementById("demo").innerHTML = "Último elemento eliminado";
+    }
+  </script>
+
+</body>
+
+</html>
