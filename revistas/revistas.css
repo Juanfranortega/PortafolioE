@@ -1,0 +1,34 @@
+html {
+    background-color: hwb(150 25% 30%);
+    font-family: Arial, Helvetica, sans-serif ;
+    line-height: 125%;
+    hyphens: auto;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center ;
+
+}
+
+article {
+    display: flex;
+    flex-direction: row ;
+    width:35vw ;
+    margin: 1vw ;
+    border: black 3px solid;
+    background-color: hwb(150 50% 30%);
+}
+
+h2 {
+    margin: .2vw ;
+    padding: .5vw ;
+    border-right: black 2px solid;
+
+}
+
+div {
+    margin: .1vw ;
+}
+
