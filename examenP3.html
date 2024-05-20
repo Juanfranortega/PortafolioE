@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Parcial 3</title>
+
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+
+    <style>
+        body {
+            background-color: #112e8c;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 20vw; 
+            background-color: #fa9b9b;
+            font-size:20px;
+            text-align: center;
+            color: #D1495B;
+            border: 1px solid #D1495B;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            width: 10vw; 
+            background-color: #fefefe;
+            font-size: 18px;
+            color: black;
+            box-sizing: border-box; 
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffffff;
+        }
+
+        div {
+            padding: 10px;
+        }
+
+        .fondo {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .rojo{
+            background-color: #d01919;
+            height: 10vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d01919;
+            font-size: 50px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #ffffff;
+            margin: 0;
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <div class="fondo">
+                <h1>LOS RUSOS DECODIFICADOR</h1>  
+            </div>
+            
+            <div class="rojo"> </div>
+
+            <form id="myform" onsubmit="return decodifier();">
+                <h2>Numeros a ingresar: </h2><br>
+                <input type="number" id="mensaje" placeholder="INGRESA NUMEROS " min="1" required><br><br>
+                <input type="submit" class="btn btn-primary" style="margin-left: 20px;">
+            </form>
+            <br><br>
+            <iframe frameborder="0" style="margin-left: 16px;" width="1220" height="400" id="pdf-iframe"></iframe>
+
+            <script>
+                function decodifier() {
+                    let messageNumber = parseInt(document.getElementById('mensaje').value);
+                    let message = [];
+                    let finalMessage = [];
+                    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+                    for (let i = 0; i < messageNumber; i++) {
+                        let userInput;
+                        do {
+                            userInput = prompt("NUMERO: " + (i + 1) + " (entre 0 y 24):");
+                            if (userInput === null) {
+                                return false;  // If the user cancels the prompt
+                            }
+                        } while (isNaN(userInput) || userInput < 0 || userInput > 24);
+                        message.push(parseInt(userInput));
+                    }
+
+                    for (let i = 0; i < messageNumber; i++) {
+                        finalMessage.push(alphabet[message[i]]);
+                    }
+
+                    var doc = new jsPDF();
+                    doc.setFontSize(22);
+                    doc.text(20, 20, 'DECODIFICADOR DE LOS RUSOS');
+                    doc.setFontSize(16);
+
+                    doc.text(20, 40, 'Mensaje Codificado:');
+                    doc.text(20, 60, message.join(', ')); 
+
+                    doc.text(20, 80, 'Mensaje Decodificado:');
+                    doc.text(20, 100, finalMessage.join('')); 
+                    
+                    var string = doc.output('datauristring');
+                    document.getElementById('pdf-iframe').src = string; 
+                    return false; 
+                }
+            </script>
+        </div>
+    </main>
+</body>
+</html>
